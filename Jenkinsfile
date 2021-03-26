@@ -1,4 +1,3 @@
-
 pipeline {
      agent any
      triggers {
@@ -20,13 +19,6 @@ pipeline {
                     sh "./gradlew build"
                }
           }
-
-	stage('Initialize') {
-              steps {
-		def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
-}
 
           stage("Docker build") {
                steps {
