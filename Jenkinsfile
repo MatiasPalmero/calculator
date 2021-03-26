@@ -21,6 +21,11 @@ pipeline {
                }
           }
 
+	stage('Initialize') {
+              def dockerHome = tool 'myDocker'
+              env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
           stage("Docker build") {
                steps {
                     sh "docker build -t 37486449/calculator:1 ."
