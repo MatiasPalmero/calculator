@@ -23,7 +23,7 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "docker build -t leszko/calculator:1 ."
+                    sh "docker build -t 37486449/calculator:1 ."
                }
           }
 
