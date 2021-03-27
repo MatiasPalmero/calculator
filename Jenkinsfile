@@ -1,9 +1,9 @@
 pipeline {
-     agent any
-     triggers {
-          pollSCM('* * * * *')
-    
- }
+     agent {
+     docker {
+	image 'openjdk:8-jdk-alpine'
+    }
+}
      stages {
           stage("Compile") {
                steps {
